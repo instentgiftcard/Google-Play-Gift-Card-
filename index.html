@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Play $150 Gift Card</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .menu {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 400px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .content img {
+            max-width: 100%;
+            border-radius: 15px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff8c00, #ff1e56);
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 30, 86, 0.5);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .content .button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #ff1e56, #ff8c00);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .offer-description {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .countdown {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .content .button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="https://optilinklock.com/1760356">☰</a>
+        </div>
+        <h1>Claim Your Gift Card</h1>
+    </header>
+
+    <div class="content">
+        <h2>🎁 $150 Google Play Gift Card</h2>
+        <img src="https://i.ibb.co/6WgXS3R/508a5ceeaa82.png" alt="Gift Card Image">
+        <a href="https://optilinklock.com/1760356" class="button">Claim Now</a>
+        <div class="countdown">Offer ends in: <span id="timer"></span></div>
+        <div class="offer-description">
+            <p>Don’t miss out on this exclusive offer! Many users have already claimed their gift cards. Register now to secure your spot and enjoy the benefits of your Google Play Gift Card!</p>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <p>🎉 4578 users have already claimed this gift card!</p>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const endTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+        const timer = document.getElementById('timer');
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timer.innerText = `${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                timer.innerText = "Offer Expired!";
+            }
+        }, 1000);
+
+        // Popup Notification
+        const popup = document.getElementById('popup');
+        setTimeout(() => {
+            popup.style.display = 'block';
+        }, 3000);
+    </script>
+</body>
+</html>
